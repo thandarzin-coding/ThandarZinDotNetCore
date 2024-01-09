@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notiflix@3.2.7/src/notiflix.min.css">
+</head>
+
+<body>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <button type="button" class="btn btn-primary" id="btnGo">Go somewhere</a>
+                <button type="button" class="btn btn-primary" id="btnclick">Click</a>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="btnclick">Click</a>
+
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.7/dist/notiflix-aio-3.2.7.min.js"></script>
+        <script>
+            // Notiflix.Notify.success('Sol lucet omnibus');
+            // Notiflix.Notify.success('Click to show an alert.', function cb() {
+            //     location.href = "https://google.com";
+            // });
+
+            // Notiflix.Confirm.show(
+            //     'Notiflix Confirm',
+            //     'Do you agree with me?',
+            //     'Yes',
+            //     'No',
+            //     function okCb() {
+            //         location.href = "https://google.com";
+            //     },
+            //     function cancelCb() {
+            //     }
+            // );
+
+            function successMessage(message) {
+                Notiflix.Notify.success('Click to show an alert.', function cb() {
+                    Notiflix.Notify.success();
+                });
+            }
+
+            $('#btnGo').click(function () {
+                successMessage();
+            })
+
+
+            $('#btnGo').click(function () {
+                Notiflix.Block.standard('.card');
+                setTimeout(() => {
+                    Notiflix.Block.remove('.card');
+                }, 3000);
+            })
+            $('#btnclick').click(function () {
+                confirmMessage();
+            })
+
+            // confirmMessage('Are you sure want to delete?').then((result) => {
+            //     if (!result) return;
+            //     Notiflix.Loading.circle();
+            //     setTimeout(() => {
+            //         Notiflix.Loading.remove();
+            //         location.href = "https://google.com";
+            //     }, 5000);
+            // })
+
+            function confirmMessage(message) {
+                return new Promise(function (myResolve, myReject) {
+                    Notiflix.Confirm.show(
+                        'Confirm',
+                        message,
+                        'Yes',
+                        'No',
+                        function okCb() {
+                            //myResolve(true);
+                            Notiflix.Notify.success('Sol lucet omnibus');
+                        },
+                        function cancelCb() {
+                            //myReject(false);
+                            // location.href = "https://google.;
+                        }
+                    );
+
+                    // Notiflix.Confirm.show(
+                    //     'Confirm',
+                    //     message,
+                    //     'Yes',
+                    //     'No',
+                    //     function okCb() {
+                    //         myResolve(true);
+                    //     },
+                    //     function cancelCb() {
+                    //         myReject(false);
+                    //     }
+                    // );
+                });
+            }
+        </script>
+</body>
+
+</html>

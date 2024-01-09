@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btnClick">Click</button>
+    <button type="button" id="btnsuccess">Success</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // setTimeout(() => {
+        //     successMessage("hello world");
+        // }, 3000);
+
+        $('#btnClick').click(function () {
+            successMessage("hello world");
+        })
+
+        $('#btnsuccess').click(function () {
+            confirmMessage("hello world");
+        })
+
+        function successMessage(message) {
+            Swal.fire({
+                title: "Success!",
+                text: message,
+                icon: "success"
+            });
+        }
+        function confirmMessage(message){
+        Swal.fire({
+            title: "Do you want to save the changes?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Save",
+            denyButtonText: `Don't save`
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                Swal.fire("Saved!", "", "success");
+            } else if (result.isDenied) {
+                Swal.fire("Changes are not saved", "", "info");
+            }
+        });
+    }
+    </script>
+</body>
+
+</html>

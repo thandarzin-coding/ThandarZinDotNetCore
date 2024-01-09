@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="txtTest" />
+    <button type="button" id="btnSave">Save to Local Storage</button>
+    <button type="button" id="btnRead">Read from Local Storage</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $('#btnSave').click(function(){
+            const data = $('#txtTest').val();
+            localStorage.setItem("Test", data);
+            alert("Saving Successful.");
+            $('#txtTest').val('');
+        })
+
+        $('#btnRead').click(function(){
+            const data = localStorage.getItem("Test");
+            $('#txtTest').val(data);
+        })
+    </script>
+</body>
+
+</html>
