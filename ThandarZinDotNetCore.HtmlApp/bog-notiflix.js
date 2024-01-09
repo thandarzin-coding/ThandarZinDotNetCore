@@ -15,24 +15,6 @@ function successMessage(message) {
 }
 
 
-function confirmMessage(message) {
-    return new Promise(function (myResolve, myReject) {
-        Notiflix.Confirm.show(
-            'Confirm',
-            message,
-            'Yes',
-            'No',
-            function okCb() {
-                myResolve(true);
-            },
-            function cancelCb() {
-                myReject(false);
-            }
-        );
-    });
-}
-
-
 const tblblog = 'Tbl_Blog';
 $('#btnSave').click(function () {
     if (editId.length == 0) {
@@ -131,11 +113,9 @@ function edit(id) {
 }
 
 function deleteItem(id) {
-    //const result = confirm('Are you sure delet'?);
-   // if (!result) return;
-   confirmMessage('Are you sure want to delete?').then((result) => {
+    const result = confirm('Are you sure delet');
     if (!result) return;
-    Notiflix.Notify.success('Deleting Successful!');
+    
     let lst = [];
     if (localStorage.getItem(tblblog) != undefined && localStorage.getItem(tblblog) != null) {
         lst = JSON.parse(localStorage.getItem(tblblog));
@@ -147,7 +127,6 @@ function deleteItem(id) {
         clearInput();
         read();
     
-})
 }
 
 read();
