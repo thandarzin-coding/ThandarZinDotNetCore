@@ -27,7 +27,7 @@ namespace ThandarZinDotNetCore.ConsoleApp.DapperExamples
             //Creat("Thhh", "ggg", "dddd");
             //Creat("Thhh", "ggg", "dddd");
             //Creat("Thhh", "ggg", "dddd");
-            Edit(61);
+            //Edit(61);
            // Delete(15);
             //Update(20, "TITLE", "AUTHOR", "CONTENT");
         }

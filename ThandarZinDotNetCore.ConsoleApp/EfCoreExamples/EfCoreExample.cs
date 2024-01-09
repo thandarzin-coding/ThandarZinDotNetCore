@@ -14,7 +14,7 @@ namespace ThandarZinDotNetCore.ConsoleApp.EfCoreExamples
         public void Run()
         {
             //Read();
-            Create("Test Title", "Test Author", "Test Content");
+            //Create("Test Title", "Test Author", "Test Content");
             //(16, "thano", "abouto", "thiso");
             //Edit(69);
             //Delete(71);
@@ -62,8 +62,6 @@ namespace ThandarZinDotNetCore.ConsoleApp.EfCoreExamples
             model.Blog_Author = blogAuthor;
             model.Blog_Content = blogContent;
             model.Blog_Title = blogTitle;
-
-
             int result = _dbContext.SaveChanges();
 
             string message = result > 0 ? "Update Successful." : "Updating Failed.";
@@ -83,7 +81,6 @@ namespace ThandarZinDotNetCore.ConsoleApp.EfCoreExamples
             Console.WriteLine(item.Blog_Content);
             Console.WriteLine(item.Blog_Author);
             Console.WriteLine(item.Blog_Title);
-
 
         }
 
