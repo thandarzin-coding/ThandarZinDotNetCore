@@ -1,6 +1,8 @@
 ﻿using ThandarZinDotNetCore.ConsoleApp.AdoDotNetExample;
 using ThandarZinDotNetCore.ConsoleApp.DapperExamples;
 using ThandarZinDotNetCore.ConsoleApp.EfCoreExamples;
+using ThandarZinDotNetCore.ConsoleApp.HttpClientExamples;
+using ThandarZinDotNetCore.ConsoleApp.RefitExamples;
 
 Console.WriteLine("Hello, World!");
 
@@ -10,9 +12,15 @@ Console.WriteLine("Hello, World!");
 //DapperExample dapperExample = new DapperExample();
 //dapperExample.Run
 
-EfCoreExample efCoreExample = new EfCoreExample();
-efCoreExample.Run();
+////HttpClientExample httpClientExample = new HttpClientExample();
+////await httpClientExample.Run();
 
+
+////EfCoreExample efCoreExample = new EfCoreExample();
+////efCoreExample.Run();
+
+//RefitExample refitExample = new RefitExample();
+//await refitExample.Run();
 
 Console.ReadKey();
 
