@@ -22,5 +22,8 @@ Console.WriteLine("Hello, World!");
 //RefitExample refitExample = new RefitExample();
 //await refitExample.Run();
 
+RefitExample refitExample = new RefitExample();
+await refitExample.Run();
+
 Console.ReadKey();
 

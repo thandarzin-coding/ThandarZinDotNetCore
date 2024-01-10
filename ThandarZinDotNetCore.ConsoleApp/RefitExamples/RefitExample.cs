@@ -17,11 +17,11 @@ namespace ThandarZinDotNetCore.ConsoleApp.RefitExamples
         public async Task Run()
         {
             //await Read();
-            // await Edit(1002);
+            //await Edit(22);
             // await Edit(20);
             //await Create("one", "two", "three");
-            //await Update (20,"xyz", "yui", "abc");
-            await Delete(20);
+            //await Update(80, "xyz", "yui", "abc");
+            await Delete(80);
         }
 
         private async Task Read()
