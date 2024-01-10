@@ -12,8 +12,8 @@ Console.WriteLine("Hello, World!");
 //DapperExample dapperExample = new DapperExample();
 //dapperExample.Run
 
-////HttpClientExample httpClientExample = new HttpClientExample();
-////await httpClientExample.Run();
+HttpClientExample httpClientExample = new HttpClientExample();
+await httpClientExample.Run();
 
 
 ////EfCoreExample efCoreExample = new EfCoreExample();
@@ -22,8 +22,8 @@ Console.WriteLine("Hello, World!");
 //RefitExample refitExample = new RefitExample();
 //await refitExample.Run();
 
-RefitExample refitExample = new RefitExample();
-await refitExample.Run();
+//RefitExample refitExample = new RefitExample();
+//await refitExample.Run();
 
 Console.ReadKey();
 

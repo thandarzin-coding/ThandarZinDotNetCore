@@ -13,7 +13,13 @@ namespace ThandarZinDotNetCore.ConsoleApp.HttpClientExamples
     {
         public async Task Run()
         {
-            await Read();
+            //await Read();
+            //await Read();
+            // await Edit(68);
+            // await Edit(20);
+            await Create("one", "two", "three");
+            //await Update(80, "xyz", "yui", "abc");
+            await Delete(70);
 
         }
         public async Task Read()
@@ -42,7 +48,7 @@ namespace ThandarZinDotNetCore.ConsoleApp.HttpClientExamples
         private async Task Edit(int id)
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7003");
+            client.BaseAddress = new Uri("https://localhost:7199");
             HttpResponseMessage response = await client.GetAsync($"api/blog/{id}");
             if (response.IsSuccessStatusCode)
             {
@@ -69,7 +75,7 @@ namespace ThandarZinDotNetCore.ConsoleApp.HttpClientExamples
             HttpContent httpContent = new StringContent(jsonBlog, Encoding.UTF8, Application.Json);
 
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7003");
+            client.BaseAddress = new Uri("https://localhost:7199");
             HttpResponseMessage response = await client.PostAsync($"api/blog", httpContent);
             if (response.IsSuccessStatusCode)
             {
@@ -95,7 +101,7 @@ namespace ThandarZinDotNetCore.ConsoleApp.HttpClientExamples
             HttpContent httpContent = new StringContent(jsonBlog, Encoding.UTF8, Application.Json);
 
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7003");
+            client.BaseAddress = new Uri("https://localhost:7199");
             HttpResponseMessage response = await client.PutAsync($"api/blog/{id}", httpContent);
             if (response.IsSuccessStatusCode)
             {
@@ -111,7 +117,7 @@ namespace ThandarZinDotNetCore.ConsoleApp.HttpClientExamples
         private async Task Delete(int id)
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7003");
+            client.BaseAddress = new Uri("https://localhost:7199");
             HttpResponseMessage response = await client.DeleteAsync($"api/blog/{id}");
             if (response.IsSuccessStatusCode)
             {

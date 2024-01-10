@@ -21,7 +21,7 @@ namespace ThandarZinDotNetCore.ConsoleApp.RefitExamples
             // await Edit(20);
             //await Create("one", "two", "three");
             //await Update(80, "xyz", "yui", "abc");
-            await Delete(80);
+          //await Delete(80);
         }
 
         private async Task Read()
